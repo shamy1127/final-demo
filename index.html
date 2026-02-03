@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Anniversary 💕</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#FFBCD9,#F5F5F5);
+  color:#8B0000;
+  overflow-x:hidden;
+}
+
+/* Sections */
+section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+/* Container */
+.container{
+  background:rgba(245,245,245,0.96);
+  padding:40px;
+  border-radius:25px;
+  max-width:720px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Images */
+.page-img{
+  width:100%;
+  max-height:400px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+/* Text */
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:2.7rem;
+  margin-bottom:20px;
+}
+p{
+  font-size:1.15rem;
+  line-height:1.8;
+}
+
+/* Buttons */
+button{
+  margin-top:30px;
+  padding:14px 40px;
+  border:none;
+  border-radius:35px;
+  background:#FFBCD9;
+  color:#8B0000;
+  font-size:1.1rem;
+  cursor:pointer;
+}
+
+/* Game */
+.game-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.card{
+  width:120px;
+  height:120px;
+  margin: 30px;
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner{
+  width:100%;
+  height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 0.6s;
+}
+
+.card.flipped .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-front,
+.card-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:15px;
+}
+
+.card-front{
+  background:#FFBCD9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+}
+
+.card-back{
+  transform:rotateY(180deg);
+  object-fit:cover;
+}
+
+/* Message */
+.game-message{
+  margin-top:20px;
+  font-size:1.1rem;
+  min-height:30px;
+}
+
+/* Fullscreen */
+.fullscreen-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.fullscreen-overlay img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:25px;
+  box-shadow:0 0 40px rgba(255,188,217,0.8);
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .card{width:90px;height:90px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FULLSCREEN OVERLAY -->
+<div class="fullscreen-overlay" id="fullscreenOverlay">
+  <img id="fullscreenImg">
+</div>
+
+<!-- PAGE 1 -->
+<section id="page1">
+  <div class="container">
+    <img src="images/page1.jpeg" class="page-img">
+    <h1>Happy Anniversary 💕</h1>
+    <p>A small journey about us till now from 2014💗.This seems a small gift,but I have been working on it for a week , we will talk about it later,for now without wasting more time I let you enjoy this....</p>
+    <button onclick="showPage(2)">Begin ✨</button>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" style="display:none;">
+  <div class="container">
+    <img src="images/page2.jpeg" class="page-img">
+    <h1>Our Memories 📸</h1>
+    <p>Every millisecond with you is a lifetime memory for me💗.....
+</p>
+    <button onclick="showPage(3)">Next 💗</button>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3" style="display:none;">
+  <div class="container">
+    <img src="images/page3.jpeg" class="page-img">
+    <h1>Why You? 🌸</h1>
+    <p>"WHY YOU?" there is NO-ONE except you made for me,for me the only person who matters for me is only you and our family💗.....
+</p>
+    <button onclick="showPage(4)">Next 💞</button>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4" style="display:none;">
+  <div class="container">
+    <img src="images/page4.jpeg" class="page-img">
+    <h1>Falling Again and again 💕</h1>
+    <p>Every day, I fall for you again.</p>
+    <button onclick="showPage(5)">Next 💓</button>
+  </div>
+</section>
+
+<!-- PAGE 5 -->
+<section id="page5" style="display:none;">
+  <div class="container">
+    <img src="images/page5.jpeg" class="page-img">
+    <h1>My Heart ❤️</h1>
+    <p>My heart is full of you & our family,no one will never even pass across 1000000....♾️ away from my heart,JUST YOU AND ONLY YOU💗......</p>
+    <button onclick="showPage(6)">Promise 💌</button>
+  </div>
+</section>
+
+<!-- PAGE 6 -->
+<section id="page6" style="display:none;">
+  <div class="container">
+    <img src="images/page6.jpeg" class="page-img">
+    <h1>My Promise ✨</h1>
+    <p>YOU ARE NOT MY OPTION, YOU ARE ONLY MADE FOR ME,......I PROMISE YOU,I WILL BE ALWAYS WITH YOU,NO MATTER WHAT HAPPENS💗.......</p>
+    <button onclick="showPage(7)">Memory Game 🎮</button>
+  </div>
+</section>
+
+<!-- PAGE 7 GAME -->
+<section id="page7" style="display:none;">
+  <div class="container">
+    <h1>Let’s refresh a memory 💖</h1>
+
+    <div class="game-container">
+      <div class="card" onclick="flipMemory(this,true,'This moment changed everything 💖')">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <img src="images/page8.jpeg" class="card-back">
+        </div>
+      </div>
+
+      <div class="card" onclick="flipMemory(this,false,'Almost 💕 Try one more time!')">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <img src="images/page10.jpeg" class="card-back">
+        </div>
+      </div>
+
+      <div class="card" onclick="flipMemory(this,false,'Not this one 💗 Try again!')">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <img src="images/page10.jpeg" class="card-back">
+        </div>
+      </div>
+    </div>
+
+    <div class="game-message" id="gameMsg"></div>
+  </div>
+</section>
+
+<!-- PAGE 8 -->
+<section id="page8" style="display:none;">
+  <div class="container">
+    <img src="images/page7.jpeg" class="page-img">
+    <h1>Forever ❤️</h1>
+    <p>YOU ARE MINE!!.....JUST MINE NO MATTER WHAT!!</p>
+    <button>Always Yours 🥰</button>
+  </div>
+</section>
+
+<script>
+function showPage(num){
+  document.querySelectorAll("section").forEach(s=>s.style.display="none");
+  document.getElementById("page"+num).style.display="flex";
+}
+
+function flipMemory(card,isCorrect,message){
+  if(card.classList.contains("flipped")) return;
+
+  const msg=document.getElementById("gameMsg");
+  card.classList.add("flipped");
+
+  if(isCorrect){
+    // wait 1 second before affirmation + fullscreen
+    setTimeout(()=>{
+      msg.innerText=message;
+
+      const overlay=document.getElementById("fullscreenOverlay");
+      const img=document.getElementById("fullscreenImg");
+      img.src=card.querySelector(".card-back").src;
+
+      overlay.style.display="flex";
+      overlay.offsetHeight;
+
+      setTimeout(()=>{
+        overlay.style.display="none";
+        showPage(8);
+      },5000);
+    },1000);
+  }else{
+    msg.innerText=message;
+    setTimeout(()=>{
+      card.classList.remove("flipped");
+      msg.innerText="";
+    },1200);
+  }
+}
+</script>
+
+</body>
+</html>
